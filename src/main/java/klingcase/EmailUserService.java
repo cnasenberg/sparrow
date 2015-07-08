@@ -2,7 +2,7 @@ package klingcase;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class SimpleUserService implements UserService {
+public class EmailUserService implements UserService {
 
 	private EmailService emailService;
 	

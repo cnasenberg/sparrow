@@ -10,23 +10,23 @@ public class Application {
 	@Bean
     UserService userService() {
 		// create depending on configuration
-		return new SimpleUserService();
+		return new EmailUserService();
 	}
 	
+	@Bean
     EmailService emailService() { 
 		// create depending on configuration
 		return new GmailService();
     }
 
 	public static void main(String[] args) {
-      ApplicationContext context = 
-          new AnnotationConfigApplicationContext(Application.class);
-	  UserService userService = context.getBean(UserService.class);
-	  EmailService emailService = context.getBean(EmailService.class);
-	  userService.setEmailService(emailService);
-	
-	  String name = args[0];
-	  String emailAddress = args[1];
-	  userService.createUser(name, emailAddress);
+
+		ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
+		UserService userService = context.getBean(UserService.class);
+		EmailService emailService = context.getBean(EmailService.class);
+
+		String name = args[0];
+		String emailAddress = args[1];
+		userService.createUser(name, emailAddress);
   }
 }
