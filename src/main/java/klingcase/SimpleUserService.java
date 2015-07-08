@@ -4,12 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class SimpleUserService implements UserService {
 
-/*
-    public void init(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }
-*/
-
 	private EmailService emailService;
 	
 	@Autowired
