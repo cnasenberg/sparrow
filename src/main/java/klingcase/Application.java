@@ -10,7 +10,7 @@ public class Application {
 	@Bean
     UserService userService() {
 		// create depending on configuration
-		return new EmailUserService();
+		return new UserServiceImpl();
 	}
 	
 	@Bean
@@ -28,5 +28,5 @@ public class Application {
 		String name = args[0];
 		String emailAddress = args[1];
 		userService.createUser(name, emailAddress);
-  }
+	}
 }
