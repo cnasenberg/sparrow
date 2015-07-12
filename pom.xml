@@ -44,6 +44,28 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>java</executable>
+					<arguments>
+						<argument>-jar</argument>
+						<argument>target/klingcase-${project.version}.jar</argument>
+					</arguments>
+					<mainClass>klingcase.Application</mainClass>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
