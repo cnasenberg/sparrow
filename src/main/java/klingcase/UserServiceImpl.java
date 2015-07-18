@@ -1,8 +1,10 @@
 package klingcase;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class SimpleUserService implements UserService {
+@Service
+public class UserServiceImpl implements UserService {
 
 	private EmailService emailService;
 	
@@ -18,7 +20,7 @@ public class SimpleUserService implements UserService {
 		System.out.println("New user "+username+" has been created.");
 		
 		// send account email 
-		this.emailService.sendEmail(emailAddress, "Your New Klingcase Account", "Dear "+username+", \nYour Klingcase account has been created.");
+		emailService.sendEmail(emailAddress, "Your New Klingcase Account", "Dear "+username+", \nYour Klingcase account has been created.");
 		System.out.println("Account details have been sent to "+emailAddress+". ");
      }
 

@@ -1,8 +1,5 @@
 package klingcase;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 public class User {
 
 	private long id;
@@ -10,8 +7,20 @@ public class User {
 	private String emailAddress; 
 	
 	public User(String username, String emailAddress) {
-		this.setUsername(username);
-		this.setEmailAddress(emailAddress); 
+		this.username = username;
+		this.emailAddress = emailAddress; 
+	}
+
+	long getId() {
+		return id;
+	}
+
+	String getUsername() {
+		return username;
+	}
+	
+	String getEmailAddress() {
+		return emailAddress;
 	}
 
 	public void setId(long id){
