@@ -8,13 +8,51 @@
 	<version>0.1.0</version>
 
 	<dependencies>
+
 		<!-- Spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.1.7.RELEASE</version>
 		</dependency>
+
+		<!-- Dependency Injection -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- Spring JDBC Template -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.1.7.RELEASE</version>
+		</dependency>
+
+		<!-- SQLite database driver -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.8.10.1</version>
+		</dependency>
+
+		<!-- Support for Java Mail -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.8.RELEASE</version>
+		</dependency>
+
+		<!-- Java Mail -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+
 	</dependencies>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -65,8 +103,6 @@
 					<mainClass>klingcase.Application</mainClass>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
-
 </project>
