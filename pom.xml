@@ -14,8 +14,8 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.1.7.RELEASE</version>
-		</dependency>		
-		
+		</dependency>
+
 		<!-- Dependency Injection -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -35,6 +35,20 @@
 			<groupId>org.xerial</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
 			<version>3.8.10.1</version>
+		</dependency>
+
+		<!-- Support for Java Mail -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.8.RELEASE</version>
+		</dependency>
+
+		<!-- Java Mail -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.4</version>
 		</dependency>
 
 	</dependencies>

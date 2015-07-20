@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 		}
 
 		if (userCreated) {
-			emailService.sendEmail(emailAddress, "Your New Application Account", "Dear " + username
+			emailService.sendEmail(emailAddress, "The Damn Email. ;)", "Dear " + username
 					+ ", \nYour account has been created. " + "\nThank you for supporting this project! ");
 			System.out.println("Account details have been sent to " + emailAddress + ". ");
 		}
