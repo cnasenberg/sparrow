@@ -25,11 +25,8 @@ public class GmailService implements EmailService {
 		message.setSubject(subject);
 		message.setText(body);
 
-		try {
-			mailSender.send(message);
-		} catch (MailException ex) {
-			System.err.println(ex.getMessage());
-		}
+		mailSender.send(message);
+
 	}
 
 }

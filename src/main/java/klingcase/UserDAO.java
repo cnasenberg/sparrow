@@ -4,5 +4,5 @@ import klingcase.User;
  
 public interface UserDAO 
 {
-	public void insert(User user);
+	public void save(User user);
 }

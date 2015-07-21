@@ -21,10 +21,10 @@
 			<value>smtp</value> 
 		</property>
 		<property name="username">
-			<value>xxx</value> <!-- add username -->
+			<value></value> <!-- add username -->
 		</property>
 		<property name="password">
-			<value>xxx</value> <!-- add password -->
+			<value></value> <!-- add password -->
 		</property>
 		<property name="javaMailProperties">
 			<props>
