@@ -9,12 +9,8 @@ import org.springframework.mail.SimpleMailMessage;
 @Service
 public class GmailService implements EmailService {
 
-	private MailSender mailSender;
-
 	@Autowired
-	public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
-	}
+	private MailSender mailSender;
 
 	public void sendEmail(String emailAddress, String subject, String body) throws MailException {
 

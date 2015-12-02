@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 				System.out.println("Account details have been sent to " + emailAddress + ". ");
 				
 			} catch (Exception e) {
-				e.printStackTrace(System.err);
+				System.err.println(e.getMessage());
 				System.out.println("Email was not sent out, please contact support@nasenberg.com.");
 			}
 		} catch (Exception e) {
