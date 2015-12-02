@@ -1,6 +1,6 @@
-package klingcase;
+package sparrow;
 
-import klingcase.User;
+import sparrow.User;
  
 public interface UserDAO 
 {

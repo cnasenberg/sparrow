@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>eu.nasenberg.claudia.klingcase</groupId>
-	<artifactId>klingcase</artifactId>
+	<groupId>eu.nasenberg.claudia.sparrow</groupId>
+	<artifactId>sparrow</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0</version>
 
@@ -74,7 +74,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>klingcase.Application</mainClass>
+									<mainClass>sparrow.Application</mainClass>
 								</transformer>
 							</transformers>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
@@ -98,9 +98,9 @@
 					<executable>java</executable>
 					<arguments>
 						<argument>-jar</argument>
-						<argument>target/klingcase-${project.version}.jar</argument>
+						<argument>target/sparrow-${project.version}.jar</argument>
 					</arguments>
-					<mainClass>klingcase.Application</mainClass>
+					<mainClass>sparrow.Application</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
