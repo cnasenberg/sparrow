@@ -1,4 +1,4 @@
-package klingcase;
+package sparrow;
 
 import javax.sql.DataSource;
 
@@ -16,7 +16,7 @@ public class JdbcUserDAO implements UserDAO {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	public void insert(User user) {
+	public void save(User user) {
 		jdbcTemplate.execute("CREATE TABLE if not exists user (name varchar, email varchar)");
 		jdbcTemplate.update(String.format("INSERT INTO user (name, email) VALUES (\"%s\", \"%s\")", user.getUsername(),
 				user.getEmailAddress()));

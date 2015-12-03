@@ -1,4 +1,4 @@
-package klingcase;
+package sparrow;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,22 +21,22 @@ public class UserServiceImpl implements UserService {
 
 	public void createUser(String username, String emailAddress) {
 
-		boolean userCreated = false;
-
 		try {
-			userDAO.insert(new User(username, emailAddress));
+			userDAO.save(new User(username, emailAddress));
 			System.out.println("New user " + username + " has been created.");
-			userCreated = true;
 
+			try {
+				emailService.sendEmail(emailAddress, "The Damn Email. ;)", "Dear " + username
+						+ ", \nYour account has been created. " + "\nThank you for supporting this project! ");
+				System.out.println("Account details have been sent to " + emailAddress + ". ");
+				
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+				System.out.println("Email was not sent out, please contact support@nasenberg.com.");
+			}
 		} catch (Exception e) {
 			e.printStackTrace(System.err);
 			System.out.println("Your user account was not created, please contact support@nasenberg.com.");
-		}
-
-		if (userCreated) {
-			emailService.sendEmail(emailAddress, "The Damn Email. ;)", "Dear " + username
-					+ ", \nYour account has been created. " + "\nThank you for supporting this project! ");
-			System.out.println("Account details have been sent to " + emailAddress + ". ");
 		}
 
 	}

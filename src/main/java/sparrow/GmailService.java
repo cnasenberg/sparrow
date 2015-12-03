@@ -1,4 +1,4 @@
-package klingcase;
+package sparrow;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +9,8 @@ import org.springframework.mail.SimpleMailMessage;
 @Service
 public class GmailService implements EmailService {
 
-	private MailSender mailSender;
-
 	@Autowired
-	public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
-	}
+	private MailSender mailSender;
 
 	public void sendEmail(String emailAddress, String subject, String body) throws MailException {
 
@@ -25,11 +21,8 @@ public class GmailService implements EmailService {
 		message.setSubject(subject);
 		message.setText(body);
 
-		try {
-			mailSender.send(message);
-		} catch (MailException ex) {
-			System.err.println(ex.getMessage());
-		}
+		mailSender.send(message);
+
 	}
 
 }
