@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 			System.out.println("New user " + username + " has been created.");
 
 			try {
-				emailService.sendEmail(emailAddress, "The Damn Email. ;)", "Dear " + username
+				emailService.sendEmail(emailAddress, "Your User Account", "Dear " + username
 						+ ", \nYour account has been created. " + "\nThank you for supporting this project! ");
 				System.out.println("Account details have been sent to " + emailAddress + ". ");
 				
