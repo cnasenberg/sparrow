@@ -3,7 +3,7 @@
 Get your application up and running: 
 ```
 #!shell
-mvn clean compile package exec:java 
+mvn clean compile test package exec:java 
 
 ```
 ## Prerequisites 
