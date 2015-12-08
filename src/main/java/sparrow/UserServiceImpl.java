@@ -3,11 +3,16 @@ package sparrow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class UserServiceImpl implements UserService {
 
 	private EmailService emailService;
 	private UserDAO userDAO;
+    
+    final static Logger logger = LoggerFactory.getLogger(Application.class);
 
 	@Autowired
 	public void setEmailService(EmailService emailService) {
@@ -31,11 +36,11 @@ public class UserServiceImpl implements UserService {
 				System.out.println("Account details have been sent to " + emailAddress + ". ");
 				
 			} catch (Exception e) {
-				System.err.println(e.getMessage());
+				logger.error(e.getMessage(), e);
 				System.out.println("Email was not sent out, please contact support@nasenberg.com.");
 			}
 		} catch (Exception e) {
-			e.printStackTrace(System.err);
+            logger.error(e.getMessage(), e);
 			System.out.println("Your user account was not created, please contact support@nasenberg.com.");
 		}
 

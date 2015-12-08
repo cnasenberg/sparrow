@@ -4,7 +4,7 @@
       <file>sparrow.log</file>
       <append>true</append>
       <encoder>
-          <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+          <pattern>%-5level %date %logger{35} - %msg%n</pattern>
       </encoder>
   </appender>
   

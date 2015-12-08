@@ -12,5 +12,7 @@ import org.springframework.mail.MailSender;
 public class AppContext {
 	
 	@Autowired DataSource dataSource; // from @ImportResource   
-	@Autowired MailSender mailSender; 
+	@Autowired MailSender mailSender;
+    
+    
 }

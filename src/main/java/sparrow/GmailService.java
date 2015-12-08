@@ -6,15 +6,20 @@ import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class GmailService implements EmailService {
+    
+    final static Logger logger = LoggerFactory.getLogger(EmailService.class);
 
 	@Autowired
 	private MailSender mailSender;
 
 	public void sendEmail(String emailAddress, String subject, String body) throws MailException {
 
-		System.out.println("... Sending email to " + emailAddress + "... ");
+        logger.info("... Sending email to " + emailAddress + "... ");
 		
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(emailAddress);
@@ -22,7 +27,8 @@ public class GmailService implements EmailService {
 		message.setText(body);
 
 		mailSender.send(message);
-
+        
+        logger.info("Email has been sent to " + emailAddress);
 	}
 
 }
