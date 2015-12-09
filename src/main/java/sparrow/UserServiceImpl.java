@@ -9,23 +9,16 @@ import org.slf4j.LoggerFactory;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
 	private EmailService emailService;
+    
+    @Autowired
 	private UserDAO userDAO;
     
     final static Logger logger = LoggerFactory.getLogger(Application.class);
 
-	@Autowired
-	public void setEmailService(EmailService emailService) {
-		this.emailService = emailService;
-	}
-
-	@Autowired
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
-
 	public void createUser(String username, String emailAddress) {
-
+        
 		try {
 			userDAO.save(new User(username, emailAddress));
 			System.out.println("New user " + username + " has been created.");
