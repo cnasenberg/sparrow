@@ -17,7 +17,7 @@ public class GmailService implements EmailService {
 	@Autowired
 	private MailSender mailSender;
 
-	public void sendEmail(String emailAddress, String subject, String body) throws MailException {
+	public String sendEmail(String emailAddress, String subject, String body) throws MailException {
 
         logger.info("... Sending email to " + emailAddress + "... ");
 		
@@ -29,6 +29,7 @@ public class GmailService implements EmailService {
 		mailSender.send(message);
         
         logger.info("Email has been sent to " + emailAddress);
+        return emailAddress;
 	}
 
 }

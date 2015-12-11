@@ -1,5 +1,5 @@
 package sparrow;
 
 public interface UserService {
-	void createUser(String username, String emailAddress);
+	User createUser(String username, String emailAddress);
 }
