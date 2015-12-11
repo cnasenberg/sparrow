@@ -17,26 +17,29 @@ public class UserServiceImpl implements UserService {
     
     final static Logger logger = LoggerFactory.getLogger(Application.class);
 
-	public void createUser(String username, String emailAddress) {
+	public User createUser(String username, String emailAddress) {
+        
+        User newUser = null;
+        String emailSentTo = "";
         
 		try {
-			userDAO.save(new User(username, emailAddress));
-			System.out.println("New user " + username + " has been created.");
+            User userToSave = new User(username, emailAddress);
+			newUser = userDAO.save(userToSave);
+			System.out.println("Thank you " + newUser.getUsername() + ", your account has been created.");
 
 			try {
-				emailService.sendEmail(emailAddress, "Your User Account", "Dear " + username
-						+ ", \nYour account has been created. " + "\nThank you for supporting this project! ");
-				System.out.println("Account details have been sent to " + emailAddress + ". ");
-				
+				emailSentTo = emailService.sendEmail(newUser.getEmailAddress(), "Your User Account", "Dear " + newUser.getUsername() + ", \nYour account has been created. " + "\nThank you for supporting this project! ");
+				System.out.println("Account details have been sent to " + emailSentTo + ". ");
 			} catch (Exception e) {
 				logger.error(e.getMessage(), e);
-				System.out.println("Email was not sent out, please contact support@nasenberg.com.");
+				System.out.println("Your account was created, but the email was not sent out. Please check your email configuration.");
 			}
 		} catch (Exception e) {
             logger.error(e.getMessage(), e);
-			System.out.println("Your user account was not created, please contact support@nasenberg.com.");
+			System.out.println("Your user account was not created, please contact support@nasenberg.eu.");
 		}
-
+        
+        return newUser;
 	}
 
 }
