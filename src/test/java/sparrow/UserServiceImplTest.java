@@ -6,11 +6,9 @@ import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import static org.mockito.Mockito.*;
-import static org.mockito.Matchers.*;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -18,7 +16,6 @@ public class UserServiceImplTest {
     
     private String username;
     private String emailAddress;
-    private String subject;
     
     @Mock UserDAO mockUserDAO;
     
