@@ -10,26 +10,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Service
-public class GmailService implements EmailService {
+public class EmailServiceImpl implements EmailService {
     
     final static Logger logger = LoggerFactory.getLogger(EmailService.class);
 
-	@Autowired
-	private MailSender mailSender;
+	@Autowired private MailSender mailSender;
+	
+	private SimpleMailMessage message;
 
 	public String sendEmail(String emailAddress, String subject, String body) throws MailException {
 
         logger.info("... Sending email to " + emailAddress + "... ");
 		
-		SimpleMailMessage message = new SimpleMailMessage();
+		message = new SimpleMailMessage();
 		message.setTo(emailAddress);
 		message.setSubject(subject);
 		message.setText(body);
 
 		mailSender.send(message);
-        
-        logger.info("Email has been sent to " + emailAddress);
-        return emailAddress;
+		String sentTo = message.getTo()[0];
+		
+        logger.info("Email was sent to " + sentTo);
+        return sentTo;
 	}
 
 }

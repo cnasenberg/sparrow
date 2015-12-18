@@ -1,12 +1,12 @@
 package sparrow;
 
-import static org.junit.Assert.*;
-
 import javax.sql.DataSource;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,7 +15,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 public class AppContextTest {
 	
-	@Autowired AnnotationConfigApplicationContext context;
+	private AnnotationConfigApplicationContext context;
 	
 	@Autowired private DataSource dataSource;
 	@Autowired private JavaMailSenderImpl mailSender;
