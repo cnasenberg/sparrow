@@ -14,23 +14,33 @@ public class UserTest {
     public void setUp() {
         nameInput = "Sparrow";
         emailAddressInput = "sparrow@hawk.nest";
-        testUser = new User(nameInput, emailAddressInput);
     }
     
     @Test
+	public void testSetEmailAddress() {
+        testUser = new User(nameInput);
+		testUser.setEmailAddress(emailAddressInput); 
+        String emailAddressOutput = testUser.getEmailAddress();
+        assertEquals(emailAddressInput, emailAddressOutput);
+	}
+    
+    @Test
     public void testGetCorrectUsername() {
+        testUser = new User(nameInput, emailAddressInput);
         String nameOutput = testUser.getUsername();
         assertEquals(nameInput, nameOutput);
     }
     
     @Test
     public void testGetCorrectEmailAddress() {
+        testUser = new User(nameInput, emailAddressInput);
         String emailAddressOutput = testUser.getEmailAddress();
         assertEquals(emailAddressInput, emailAddressOutput);
     }
     
     @Test
     public void testGetCorrectId() {
+        testUser = new User(nameInput, emailAddressInput);
         long idInput = 123456;
         testUser.setId(idInput);
         long idOutput = testUser.getId();

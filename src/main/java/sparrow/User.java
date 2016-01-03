@@ -10,6 +10,10 @@ public class User {
 		this.username = username;
 		this.emailAddress = emailAddress; 
 	}
+	
+	public User(String username) {
+		this.username = username;
+	}
 
 	long getId() {
 		return id;
@@ -25,10 +29,6 @@ public class User {
 
 	public void setId(long id){
 		this.id = id;  
-	}
-	
-	public void setUsername(String username){
-		this.username = username; 
 	}
 	
 	public void setEmailAddress(String emailAddress){

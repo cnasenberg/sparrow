@@ -2,17 +2,25 @@ package sparrow;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.*;
-import org.springframework.mail.MailSender;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 @ComponentScan
 @Configuration 
 @ImportResource("config.xml")
 public class AppContext {
 	
-	@Autowired DataSource dataSource; // from @ImportResource   
-	@Autowired MailSender mailSender;
-    
-    
+	@Bean 
+	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+		return new JdbcTemplate(dataSource);
+	}
+	
+	@Bean
+	public SimpleJdbcInsert userInsert(JdbcTemplate jdbcTemplate) {
+		return new SimpleJdbcInsert(jdbcTemplate);
+	}
 }
