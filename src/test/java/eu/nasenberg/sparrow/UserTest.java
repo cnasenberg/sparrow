@@ -16,7 +16,7 @@ public class UserTest {
     @Before
     public void setUp() {
         nameInput = "Sparrow";
-        emailAddressInput = "eu.nasenberg.sparrow@hawk.nest";
+        emailAddressInput = "sparrow@hawk.nest";
     }
     
     @Test
