@@ -1,6 +1,6 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
-import sparrow.User;
+import eu.nasenberg.sparrow.User;
  
 public interface UserDAO {
 	public User save(User user);

@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.mail.MailSender;
+
+import eu.nasenberg.sparrow.EmailServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EmailServiceImplTest {

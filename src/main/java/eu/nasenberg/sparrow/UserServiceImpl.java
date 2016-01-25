@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

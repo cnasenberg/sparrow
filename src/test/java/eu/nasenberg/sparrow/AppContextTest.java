@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import javax.sql.DataSource;
 
@@ -26,7 +26,7 @@ public class AppContextTest {
 	@Before 
 	public void setUp() {
 		context = new AnnotationConfigApplicationContext();	
-		context.scan("sparrow"); // Scans for available configurations.
+		context.scan("eu.nasenberg.sparrow"); // Scans for available configurations.
 		context.refresh();
 	}
 	

@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -10,6 +10,12 @@ import static org.mockito.Mockito.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import eu.nasenberg.sparrow.EmailService;
+import eu.nasenberg.sparrow.User;
+import eu.nasenberg.sparrow.UserDAO;
+import eu.nasenberg.sparrow.UserService;
+import eu.nasenberg.sparrow.UserServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceImplTest {

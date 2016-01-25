@@ -1,7 +1,10 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import eu.nasenberg.sparrow.User;
+
 import org.junit.Before;
 
 public class UserTest {
@@ -13,7 +16,7 @@ public class UserTest {
     @Before
     public void setUp() {
         nameInput = "Sparrow";
-        emailAddressInput = "sparrow@hawk.nest";
+        emailAddressInput = "eu.nasenberg.sparrow@hawk.nest";
     }
     
     @Test

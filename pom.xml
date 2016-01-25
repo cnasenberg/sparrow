@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.nasenberg.claudia.sparrow</groupId>
-	<artifactId>sparrow</artifactId>
+	<artifactId>eu.nasenberg.sparrow</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0</version>
 	
@@ -12,7 +12,6 @@
         <hibernate.version>5.0.7.Final</hibernate.version>
         <mockito.version>1.10.19</mockito.version>
         <junit.version>4.12</junit.version>
-        <spring-test.version>4.2.4.RELEASE</spring-test.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputDirectory>${project.basedir}/reports</project.reporting.outputDirectory>
     </properties>
@@ -155,7 +154,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>sparrow.Application</mainClass>
+									<mainClass>eu.nasenberg.sparrow.Application</mainClass>
 								</transformer>
 							</transformers>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
@@ -180,9 +179,9 @@
 					<executable>java</executable>
 					<arguments>
 						<argument>-jar</argument>
-						<argument>target/sparrow-${project.version}.jar</argument>
+						<argument>target/eu.nasenberg.sparrow-${project.version}.jar</argument>
 					</arguments>
-					<mainClass>sparrow.Application</mainClass>
+					<mainClass>eu.nasenberg.sparrow.Application</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
