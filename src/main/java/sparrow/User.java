@@ -6,6 +6,9 @@ public class User {
     private String username; 
 	private String emailAddress; 
 	
+	public User() {
+	}
+	
 	public User(String username, String emailAddress) {
 		this.username = username;
 		this.emailAddress = emailAddress; 
@@ -15,20 +18,24 @@ public class User {
 		this.username = username;
 	}
 
-	long getId() {
+	public long getId() {
 		return id;
 	}
 
-	String getUsername() {
+	public String getUsername() {
 		return username;
 	}
 	
-	String getEmailAddress() {
+	public String getEmailAddress() {
 		return emailAddress;
 	}
 
 	public void setId(long id){
 		this.id = id;  
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public void setEmailAddress(String emailAddress){

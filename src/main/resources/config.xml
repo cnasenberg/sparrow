@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-
+    
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.sqlite.JDBC" />
@@ -10,16 +10,26 @@
 			value="jdbc:sqlite:src/main/resources/database.sqlite" />
 		<property name="username" value="root" />
 		<property name="password" value="password" />
-	</bean>
-<!--	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-
-    <bean id="userInsert" class="org.springframework.jdbc.core.simple.SimpleJdbcInsert">
-		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
-	</bean>
--->	
+	</bean>    
+	
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+            <list>
+                <value>user.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>            
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</prop>           
+            </props>
+        </property>        
+    </bean>	       
+    
+    <!-- Exception translation bean post processor -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+ 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port">

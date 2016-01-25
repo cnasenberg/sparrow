@@ -16,6 +16,7 @@ public class UserServiceImplTest {
     
     private String username;
     private String emailAddress;
+    private long id;
     
     @Mock UserDAO mockUserDAO;
     
@@ -27,24 +28,32 @@ public class UserServiceImplTest {
 
     @Before
     public void setUp() {
-        username = "Blackbird";
-        emailAddress = "black@bird.tree";
-        
+
         when(mockUserDAO.save(any(User.class))).thenReturn(mockNewUser);
-        when(mockEmailService.sendEmail(any(String.class), any(String.class), any(String.class))).thenReturn(emailAddress);
+    	
+    	username = "Blackbird";
+        emailAddress = "black@bird.tree";
+        id = 1;
+        
         when(mockNewUser.getUsername()).thenReturn(username);
+        when(mockNewUser.getEmailAddress()).thenReturn(emailAddress);
+        when(mockNewUser.getId()).thenReturn(id);
+        
+        when(mockEmailService.sendEmail(any(String.class), any(String.class), any(String.class))).thenReturn(emailAddress);
     }
     
 	@Test
     public void testCreateUserReturnsAUser() {
-        User newUser = testUserService.createUser(username, emailAddress);
-        assertNotNull(newUser);
+        User user = testUserService.createUser(username, emailAddress);
+        assertNotNull(user);
     }
     
     @Test
     public void testCreateUserReturnsCorrectUserObject() {
-        User newUser = testUserService.createUser(username, emailAddress);
-        assertSame(newUser, mockNewUser);
+        User user = testUserService.createUser(username, emailAddress);
+        assertEquals(user.getUsername(), username);
+        assertEquals(user.getEmailAddress(), emailAddress);
+        assertNotNull(user.getId());
     }
 
 }
