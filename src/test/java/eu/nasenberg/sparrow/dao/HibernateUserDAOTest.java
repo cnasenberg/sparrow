@@ -1,4 +1,4 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.dao;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.any;
@@ -19,8 +19,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import eu.nasenberg.sparrow.HibernateUserDAO;
-import eu.nasenberg.sparrow.User;
+import eu.nasenberg.sparrow.entity.User;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HibernateUserDAOTest {

@@ -154,7 +154,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>eu.nasenberg.sparrow.Application</mainClass>
+									<mainClass>eu.nasenberg.sparrow.application.Application</mainClass>
 								</transformer>
 							</transformers>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
@@ -181,7 +181,7 @@
 						<argument>-jar</argument>
 						<argument>target/eu.nasenberg.sparrow-${project.version}.jar</argument>
 					</arguments>
-					<mainClass>eu.nasenberg.sparrow.Application</mainClass>
+					<mainClass>eu.nasenberg.sparrow.application.Application</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

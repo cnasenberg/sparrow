@@ -1,4 +1,4 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.dao;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import eu.nasenberg.sparrow.application.Application;
+import eu.nasenberg.sparrow.entity.User;
 
 @Repository
 public class HibernateUserDAO implements UserDAO {

@@ -1,4 +1,4 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.service;
 
 public interface EmailService {
 	

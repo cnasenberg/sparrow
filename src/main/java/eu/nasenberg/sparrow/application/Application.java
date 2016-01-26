@@ -1,7 +1,9 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.application;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
+
+import eu.nasenberg.sparrow.service.UserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

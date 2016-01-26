@@ -1,4 +1,4 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.application;
 
 import javax.sql.DataSource;
 

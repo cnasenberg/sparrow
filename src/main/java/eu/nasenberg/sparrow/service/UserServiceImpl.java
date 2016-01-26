@@ -1,7 +1,11 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import eu.nasenberg.sparrow.application.Application;
+import eu.nasenberg.sparrow.dao.UserDAO;
+import eu.nasenberg.sparrow.entity.User;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

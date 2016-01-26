@@ -1,9 +1,9 @@
-package eu.nasenberg.sparrow;
+package eu.nasenberg.sparrow.entity;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import eu.nasenberg.sparrow.User;
+import eu.nasenberg.sparrow.entity.User;
 
 import org.junit.Before;
 
