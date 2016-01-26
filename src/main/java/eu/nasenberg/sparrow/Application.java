@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;

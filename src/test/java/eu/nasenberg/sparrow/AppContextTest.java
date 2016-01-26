@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import javax.sql.DataSource;
 
@@ -12,6 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 public class AppContextTest {
 	
@@ -25,7 +26,7 @@ public class AppContextTest {
 	@Before 
 	public void setUp() {
 		context = new AnnotationConfigApplicationContext();	
-		context.scan("sparrow"); // Scans for available configurations.
+		context.scan("eu.nasenberg.sparrow"); // Scans for available configurations.
 		context.refresh();
 	}
 	
@@ -36,13 +37,8 @@ public class AppContextTest {
 	
 	@Test
 	public void testBeansAvailable() {
-		assertNotNull(context.getBean(JdbcTemplate.class));
-		assertNotNull(context.getBean(SimpleJdbcInsert.class));
-	}
-	
-	@Test
-	public void testConfigImported() {
 		assertNotNull(context.getBean(DataSource.class));
+		assertNotNull(context.getBean(LocalSessionFactoryBean.class));		
 		assertNotNull(context.getBean(JavaMailSenderImpl.class));
 	}
 	

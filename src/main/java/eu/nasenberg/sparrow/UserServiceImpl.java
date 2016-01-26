@@ -1,4 +1,4 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,10 +22,12 @@ public class UserServiceImpl implements UserService {
         User newUser = null;
         String emailSentTo = "";
         
-		try {
-            User userToSave = new User(username, emailAddress);
-			newUser = userDAO.save(userToSave);
+		try {            
+			newUser = userDAO.save(new User(username, emailAddress));
+			logger.info("User data for " + newUser.getUsername() + " has been saved.");
+			
 			System.out.println("Thank you " + newUser.getUsername() + ", your account has been created.");
+			logger.info("New user " + newUser.getUsername() + " with email address " + newUser.getEmailAddress() + " and ID " + newUser.getId() + " has been created.");
 
 			try {
 				emailSentTo = emailService.sendEmail(newUser.getEmailAddress(), "Your User Account", "Dear " + newUser.getUsername() + ", \nYour account has been created. " + "\nThank you for supporting this project! ");
@@ -36,7 +38,7 @@ public class UserServiceImpl implements UserService {
 			}
 		} catch (Exception e) {
             logger.error(e.getMessage(), e);
-			System.out.println("Your user account was not created, please contact support@nasenberg.eu.");
+			System.out.println("Your user account was not created, your data could not be stored. Please contact support@nasenberg.eu.");
 		}
         
         return newUser;

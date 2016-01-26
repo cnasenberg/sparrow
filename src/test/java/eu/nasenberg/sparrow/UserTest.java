@@ -1,7 +1,10 @@
-package sparrow;
+package eu.nasenberg.sparrow;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import eu.nasenberg.sparrow.User;
+
 import org.junit.Before;
 
 public class UserTest {
