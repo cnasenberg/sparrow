@@ -13,7 +13,7 @@ import eu.nasenberg.sparrow.application.Application;
 import eu.nasenberg.sparrow.entity.User;
 
 @Repository
-public class HibernateUserDAO implements UserDAO {
+public class UserDAOImpl implements UserDAO {
 
     final static Logger logger = LoggerFactory.getLogger(Application.class);
 	

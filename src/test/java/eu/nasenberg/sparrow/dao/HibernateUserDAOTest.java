@@ -30,7 +30,7 @@ public class HibernateUserDAOTest {
         
 	@Autowired
 	@InjectMocks  
-    private HibernateUserDAO testHibernateUserDAO;
+    private UserDAOImpl testHibernateUserDAO;
 	
 	@Mock private SessionFactory sessionFactory;
 	@Mock private Session session;

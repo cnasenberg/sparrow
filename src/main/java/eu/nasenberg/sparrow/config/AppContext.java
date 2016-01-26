@@ -1,4 +1,4 @@
-package eu.nasenberg.sparrow.application;
+package eu.nasenberg.sparrow.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
